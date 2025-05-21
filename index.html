@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
-            --primary-color-start: #DB00FF; /* Vivid Purple */
-            --primary-color-end: #00F2FF;   /* Electric Blue */
-            --accent-color-start: #FF007A;  /* Neon Pink */
-            --accent-color-end: #FFD600;    /* Bright Gold */
+            --primary-color-start: #DB00FF; /* Vivid Purple - بنفسجي زاهي */
+            --primary-color-end: #00F2FF;   /* Electric Blue - أزرق كهربائي */
+            --accent-color-start: #FF007A;  /* Neon Pink - وردي نيون */
+            --accent-color-end: #FFD600;    /* Bright Gold - ذهبي براق */
             --dark-bg: #0a0f1f; 
             --light-text: #e0e0e0;
             --card-bg-ultra: rgba(22, 12, 58, 0.7); 
@@ -31,20 +31,20 @@
         }
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); } /* Reduced float */
+            50% { transform: translateY(-10px); } /* Reduced float - تقليل الطفو */
         }
         @keyframes pulseGlow {
-            0% { box-shadow: 0 0 3px rgba(255, 126, 95, 0.3), 0 0 8px rgba(255, 126, 95, 0.2); } /* Reduced glow */
+            0% { box-shadow: 0 0 3px rgba(255, 126, 95, 0.3), 0 0 8px rgba(255, 126, 95, 0.2); } /* Reduced glow - تقليل التوهج */
             50% { box-shadow: 0 0 15px rgba(255, 126, 95, 0.5), 0 0 25px rgba(255, 126, 95, 0.3); }
             100% { box-shadow: 0 0 3px rgba(255, 126, 95, 0.3), 0 0 8px rgba(255, 126, 95, 0.2); }
         }
 
         body {
-            font-family: 'Tajawal', 'Almarai', sans-serif; /* Tajawal as primary, Almarai as fallback */
+            font-family: 'Tajawal', 'Almarai', sans-serif; /* Tajawal as primary, Almarai as fallback - تجوال أساسي، المراعي احتياطي */
             scroll-behavior: smooth;
             background-color: var(--dark-bg);
             color: var(--light-text);
-            overflow-x: hidden;
+            overflow-x: hidden; /* Crucial for preventing horizontal scroll - ضروري لمنع التمرير الأفقي */
         }
         .hero-gradient-ultra {
             background: linear-gradient(135deg, #161b30 0%, #2a2f4a 30%, #764ba2 70%, #667eea 100%);
@@ -57,14 +57,14 @@
             background: linear-gradient(45deg, #ff4b2b, #ff416c);
             color: white;
             font-weight: 800;
-            /* Responsive padding handled by Tailwind */
+            /* Responsive padding handled by Tailwind - الحشوة المتجاوبة تعالج بواسطة Tailwind */
             border-radius: 50px;
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 10px 30px rgba(255, 75, 43, 0.3); /* Slightly reduced shadow */
+            box-shadow: 0 10px 30px rgba(255, 75, 43, 0.3); /* Slightly reduced shadow - تقليل طفيف للظل */
             border: none;
             position: relative;
             overflow: hidden;
-            display: inline-block; /* Ensure proper rendering */
+            display: inline-block; /* Ensure proper rendering - ضمان العرض الصحيح */
         }
         .btn-primary-ultra::before {
             content: '';
@@ -73,14 +73,14 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent); /* Subtler shine */
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent); /* Subtler shine - لمعان أخف */
             transition: all 0.6s ease;
         }
         .btn-primary-ultra:hover::before {
             left: 100%;
         }
         .btn-primary-ultra:hover {
-            transform: translateY(-4px) scale(1.03); /* Subtler hover */
+            transform: translateY(-4px) scale(1.03); /* Subtler hover - تأثير تمرير أخف */
             box-shadow: 0 12px 32px rgba(255, 75, 43, 0.4);
         }
         .btn-whatsapp-ultra {
@@ -100,7 +100,7 @@
             box-shadow: 0 10px 28px rgba(29, 174, 80, 0.35);
         }
         
-        .price-display-ultra-base { /* Base class for structure, Tailwind for size */
+        .price-display-ultra-base { /* Base class for structure, Tailwind for size - فئة أساسية للهيكل، Tailwind للحجم */
             font-weight: 900;
             color: #fde047; 
             text-shadow: 0 0 8px rgba(253, 224, 71, 0.4), 0 0 15px rgba(253, 224, 71, 0.25); /* Subtler shadow */
@@ -114,8 +114,8 @@
             font-weight: 900;
             color: #cbd5e1; 
             position: relative;
-            padding-bottom: 1rem; /* Adjusted padding */
-            margin-bottom: 2.5rem; /* Adjusted margin */
+            padding-bottom: 1rem; /* Adjusted padding - تعديل الحشوة */
+            margin-bottom: 2.5rem; /* Adjusted margin - تعديل الهامش */
         }
         .section-title-ultra-base::after {
             content: '';
@@ -123,8 +123,8 @@
             bottom: 0;
             right: 50%;
             transform: translateX(50%);
-            width: 100px; /* Adjusted width */
-            height: 5px; /* Adjusted height */
+            width: 100px; /* Adjusted width - تعديل العرض */
+            height: 5px; /* Adjusted height - تعديل الارتفاع */
             background: linear-gradient(90deg, #ff4b2b, #ff416c, #fde047); 
             border-radius: 3px;
             animation: subtleShine 3s linear infinite;
@@ -141,7 +141,7 @@
             position: relative;
         }
         .card-ultra:hover {
-            transform: translateY(-10px) perspective(1000px) rotateX(1deg) rotateY(0.5deg); /* Subtler hover 3D */
+            transform: translateY(-10px) perspective(1000px) rotateX(1deg) rotateY(0.5deg); /* Subtler hover 3D - تأثير تمرير ثلاثي الأبعاد أخف */
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
             border-color: var(--card-hover-border-ultra);
         }
@@ -156,7 +156,7 @@
             transition: transform 0.3s ease;
         }
         .card-ultra:hover .feature-icon-ultra-base {
-            transform: scale(1.08) rotate(3deg); /* Subtler rotation */
+            transform: scale(1.08) rotate(3deg); /* Subtler rotation - دوران أخف */
         }
         .store-name-ultra {
             font-weight: 900;
@@ -166,11 +166,11 @@
             background-clip: text;
             text-fill-color: transparent;
             background-size: 200% auto;
-            animation: gradientBG 5s linear infinite; /* Re-used gradientBG for name */
+            animation: gradientBG 5s linear infinite; /* Re-used gradientBG for name - إعادة استخدام تدرج الخلفية للاسم */
         }
         .animate-slide-in-bottom {
             opacity: 0;
-            transform: translateY(40px); /* Subtler slide */
+            transform: translateY(40px); /* Subtler slide - انزلاق أخف */
             transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
             transition-delay: var(--animation-delay, 0s);
         }
@@ -189,16 +189,16 @@
         }
         .particle {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.1); /* Subtler particles */
+            background-color: rgba(255, 255, 255, 0.1); /* Subtler particles - جسيمات أخف */
             border-radius: 50%;
-            animation: float 25s infinite ease-in-out; /* Slower float */
+            animation: float 25s infinite ease-in-out; /* Slower float - طفو أبطأ */
         }
         .hero-shape {
             position: absolute;
             border-radius: 50%;
             opacity: 0.07; 
             filter: blur(50px); 
-            animation: float 30s infinite ease-in-out alternate; /* Re-used float for shapes */
+            animation: float 30s infinite ease-in-out alternate; /* Re-used float for shapes - إعادة استخدام الطفو للأشكال */
             transform-origin: center center;
         }
         .shape1 { width: 300px; height: 300px; background-color: var(--primary-color-start); top: 15%; left: 10%; animation-duration: 35s; }
@@ -229,7 +229,7 @@
         </div>
     </nav>
 
-    <header class="hero-gradient-ultra text-white pt-24 pb-28 md:pt-32 md:pb-36 lg:pt-36 lg:pb-40 relative"> {/* Adjusted padding */}
+    <header class="hero-gradient-ultra text-white pt-24 pb-28 md:pt-32 md:pb-36 lg:pt-36 lg:pb-40 relative">
         <div class="particles" id="particle-container">
             </div>
         <div class="hero-shape shape1"></div>
@@ -247,7 +247,7 @@
             <p class="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 font-semibold max-w-md sm:max-w-xl md:max-w-3xl mx-auto animate-slide-in-bottom" style="--animation-delay: 0.5s;">
                 احصل الآن على اشتراك <span class="font-black text-yellow-300">Canva Pro</span> الرسمي لمدة سنة كاملة ✅👑
             </p>
-            <div class="max-w-xs sm:max-w-sm md:max-w-2xl mx-auto text-sm sm:text-base md:text-lg space-y-4 sm:space-y-5 mb-10 sm:mb-12 card-ultra bg-white/5 p-6 sm:p-8 rounded-2xl md:rounded-3xl animate-slide-in-bottom" style="--animation-delay: 0.7s;"> {/* Adjusted padding and rounding for responsiveness */}
+            <div class="max-w-xs sm:max-w-sm md:max-w-2xl mx-auto text-sm sm:text-base md:text-lg space-y-4 sm:space-y-5 mb-10 sm:mb-12 card-ultra bg-white/5 p-6 sm:p-8 rounded-2xl md:rounded-3xl animate-slide-in-bottom" style="--animation-delay: 0.7s;">
                 <p>👈 إذا كنت <strong class="text-yellow-200">صاحب متجر</strong> وتحتاج تصاميم احترافية لمنتجاتك أو شعار جذاب!</p>
                 <p>👈 إذا كنت <strong class="text-yellow-200">مستقل (Freelancer)</strong> وتقدم تصاميم لعملائك وتبحث عن مكتبة ضخمة!</p>
                 <p>👈 إذا كنت ترغب بإنشاء <strong class="text-yellow-200">فيديوهات ترويجية</strong> مذهلة بدون خبرة في المونتاج! 🖥️🖱️</p>
@@ -260,7 +260,7 @@
         </div>
     </header>
 
-    <section id="intro-canva-pro" class="py-20 md:py-24 bg-slate-950"> {/* Adjusted padding */}
+    <section id="intro-canva-pro" class="py-20 md:py-24 bg-slate-950">
         <div class="container mx-auto px-4 sm:px-6 animate-slide-in-bottom">
             <h2 class="section-title-ultra-base text-3xl sm:text-4xl md:text-5xl text-center">ما هو Canva Pro؟ ولماذا تحتاجه؟</h2>
             <div class="max-w-xs sm:max-w-md md:max-w-3xl mx-auto text-center card-ultra p-8 sm:p-10 md:p-12">
@@ -274,7 +274,7 @@
         </div>
     </section>
 
-    <section id="offer-details" class="py-20 md:py-24 bg-slate-900 text-white"> {/* Adjusted padding */}
+    <section id="offer-details" class="py-20 md:py-24 bg-slate-900 text-white">
         <div class="container mx-auto px-4 sm:px-6 animate-slide-in-bottom">
             <h2 class="section-title-ultra-base text-3xl sm:text-4xl md:text-5xl text-center !text-yellow-300 after:!bg-gradient-to-r after:from-yellow-400 after:to-orange-500">العرض الذي لن يتكرر!</h2>
             <p class="text-center text-slate-400 mb-12 sm:mb-16 max-w-sm sm:max-w-xl mx-auto text-base sm:text-lg">فرصتك الذهبية للحصول على Canva Pro بأقل سعر على الإطلاق، مقدمة من <span class="font-bold store-name-ultra text-lg sm:text-xl">تخفيضات صابر الرقميه</span>:</p>
@@ -310,7 +310,7 @@
         </div>
     </section>
 
-    <section id="how-to-get-the-offer" class="py-20 md:py-24 bg-slate-950"> {/* Adjusted padding */}
+    <section id="how-to-get-the-offer" class="py-20 md:py-24 bg-slate-950">
         <div class="container mx-auto px-4 sm:px-6 animate-slide-in-bottom">
             <h2 class="section-title-ultra-base text-3xl sm:text-4xl md:text-5xl text-center">خطوات بسيطة للاشتراك الفوري:</h2>
             <p class="text-center text-slate-400 mb-12 sm:mb-16 max-w-sm sm:max-w-xl mx-auto text-base sm:text-lg">دقائق معدودة تفصلك عن عالم الإبداع اللامحدود مع Canva Pro:</p>
@@ -334,7 +334,7 @@
         </div>
     </section>
     
-    <section class="py-16 sm:py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-purple-900"> {/* Adjusted padding */}
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-purple-900">
         <div class="container mx-auto px-4 sm:px-6 text-center animate-slide-in-bottom">
             <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 mb-5 sm:mb-6">
                 <i class="fas fa-fire-alt text-orange-400"></i> منتجات رقمية إضافية بأسعار رمزية! <i class="fas fa-fire-alt text-orange-400"></i>
@@ -346,7 +346,7 @@
         </div>
     </section>
 
-    <section class="py-20 md:py-24 bg-slate-950"> {/* Adjusted padding */}
+    <section class="py-20 md:py-24 bg-slate-950">
         <div class="container mx-auto px-4 sm:px-6 animate-slide-in-bottom">
             <h2 class="section-title-ultra-base text-3xl sm:text-4xl md:text-5xl text-center">ماذا يقول عملاؤنا عن عروضنا؟</h2>
              <p class="text-center text-slate-400 mb-12 sm:mb-16 max-w-sm sm:max-w-xl mx-auto text-base sm:text-lg">رضاكم هو غايتنا، وهذه بعض انطباعات عملائنا الكرام الذين وثقوا بنا:</p>
@@ -365,7 +365,7 @@
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-500 py-12 sm:py-16 border-t border-slate-800"> {/* Adjusted padding */}
+    <footer class="bg-slate-900 text-slate-500 py-12 sm:py-16 border-t border-slate-800">
         <div class="container mx-auto px-4 sm:px-6 text-center">
             <a href="#" class="text-3xl sm:text-4xl mb-5 sm:mb-6 inline-block store-name-ultra">
                 تخفيضات صابر الرقميه
@@ -392,8 +392,8 @@
 
             // Particle generation for hero section
             const particleContainer = document.getElementById('particle-container');
-            if (particleContainer) { // Check if container exists
-                const numParticles = window.innerWidth < 768 ? 15 : 30; // Fewer particles on mobile
+            if (particleContainer) { 
+                const numParticles = window.innerWidth < 768 ? 15 : 30; 
 
                 for (let i = 0; i < numParticles; i++) {
                     let particle = document.createElement('div');
@@ -404,7 +404,7 @@
                     particle.style.left = `${Math.random() * 100}%`;
                     particle.style.top = `${Math.random() * 100}%`;
                     particle.style.animationDelay = `${Math.random() * 20}s`; 
-                    particle.style.animationDuration = `${Math.random() * 15 + 20}s`; // Slightly longer duration
+                    particle.style.animationDuration = `${Math.random() * 15 + 20}s`; 
                     particleContainer.appendChild(particle);
                 }
             }
@@ -419,13 +419,12 @@
                             observer.unobserve(entry.target); 
                         }
                     });
-                }, { threshold: 0.05 }); // Trigger animation when 5% of element is visible
+                }, { threshold: 0.05 });
 
                 animatedElements.forEach(el => {
                     observer.observe(el);
                 });
             } else {
-                // Fallback for older browsers
                 animatedElements.forEach(el => {
                     el.classList.add('is-visible');
                 });
@@ -437,11 +436,11 @@
                 window.addEventListener('scroll', () => {
                     const scrollY = window.scrollY;
                     heroShapes.forEach((shape, index) => {
-                        const speed = (index + 1) * 0.03; // Reduced speed further
+                        const speed = (index + 1) * 0.03; 
                         if (window.innerWidth > 640) { 
-                           shape.style.transform = `translateY(${scrollY * speed * 0.15}px) rotate(${scrollY * speed * 0.02}deg) scale(${1 - scrollY * 0.00005})`; // Very subtle scale
+                           shape.style.transform = `translateY(${scrollY * speed * 0.15}px) rotate(${scrollY * speed * 0.02}deg) scale(${1 - scrollY * 0.00005})`;
                         } 
-                        // On mobile, CSS media queries handle scaling, and JS transform on scroll is disabled for performance.
+                        /* On mobile, CSS media queries handle scaling, and JS transform on scroll is disabled for performance. */
                     });
                 });
             }
