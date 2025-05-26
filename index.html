@@ -8,11 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" xintegrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* تعريف المتغيرات الأساسية للألوان والخلفيات */
         :root {
-            --primary-color-start: #DB00FF; /* Vivid Purple - بنفسجي زاهي */
-            --primary-color-end: #00F2FF;   /* Electric Blue - أزرق كهربائي */
-            --accent-color-start: #FF007A;  /* Neon Pink - وردي نيون */
-            --accent-color-end: #FFD600;    /* Bright Gold - ذهبي براق */
+            --primary-color-start: #DB00FF; /* بنفسجي زاهي */
+            --primary-color-end: #00F2FF;   /* أزرق كهربائي */
+            --accent-color-start: #FF007A;  /* وردي نيون */
+            --accent-color-end: #FFD600;    /* ذهبي براق */
             --dark-bg: #0a0f1f; 
             --light-text: #e0e0e0;
             --card-bg-ultra: rgba(22, 12, 58, 0.7); 
@@ -20,6 +21,7 @@
             --card-hover-border-ultra: rgba(0, 242, 255, 0.6);
         }
 
+        /* تعريف حركات CSS */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -31,21 +33,23 @@
         }
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); } /* Reduced float - تقليل الطفو */
+            50% { transform: translateY(-10px); } /* تقليل الطفو */
         }
         @keyframes pulseGlow {
-            0% { box-shadow: 0 0 3px rgba(255, 126, 95, 0.3), 0 0 8px rgba(255, 126, 95, 0.2); } /* Reduced glow - تقليل التوهج */
+            0% { box-shadow: 0 0 3px rgba(255, 126, 95, 0.3), 0 0 8px rgba(255, 126, 95, 0.2); } /* تقليل التوهج */
             50% { box-shadow: 0 0 15px rgba(255, 126, 95, 0.5), 0 0 25px rgba(255, 126, 95, 0.3); }
             100% { box-shadow: 0 0 3px rgba(255, 126, 95, 0.3), 0 0 8px rgba(255, 126, 95, 0.2); }
         }
 
+        /* الأنماط الأساسية للجسم والخطوط */
         body {
-            font-family: 'Tajawal', 'Almarai', sans-serif; /* Tajawal as primary, Almarai as fallback - تجوال أساسي، المراعي احتياطي */
-            scroll-behavior: smooth;
+            font-family: 'Tajawal', 'Almarai', sans-serif; /* تجوال أساسي، المراعي احتياطي */
+            scroll-behavior: smooth; /* تفعيل التمرير السلس */
             background-color: var(--dark-bg);
             color: var(--light-text);
-            overflow-x: hidden; /* Crucial for preventing horizontal scroll - ضروري لمنع التمرير الأفقي */
+            overflow-x: hidden; /* ضروري لمنع التمرير الأفقي */
         }
+        /* أنماط قسم البطل (Hero Section) */
         .hero-gradient-ultra {
             background: linear-gradient(135deg, #161b30 0%, #2a2f4a 30%, #764ba2 70%, #667eea 100%);
             background-size: 200% 200%;
@@ -53,19 +57,20 @@
             position: relative;
             overflow: hidden;
         }
+        /* أنماط الأزرار الأساسية */
         .btn-primary-ultra {
             background: linear-gradient(45deg, #ff4b2b, #ff416c);
             color: white;
             font-weight: 800;
-            /* Responsive padding handled by Tailwind - الحشوة المتجاوبة تعالج بواسطة Tailwind */
             border-radius: 50px;
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 10px 30px rgba(255, 75, 43, 0.3); /* Slightly reduced shadow - تقليل طفيف للظل */
+            box-shadow: 0 10px 30px rgba(255, 75, 43, 0.3); /* تقليل طفيف للظل */
             border: none;
             position: relative;
             overflow: hidden;
-            display: inline-block; /* Ensure proper rendering - ضمان العرض الصحيح */
+            display: inline-block; /* ضمان العرض الصحيح */
         }
+        /* تأثير اللمعان عند التمرير فوق الزر */
         .btn-primary-ultra::before {
             content: '';
             position: absolute;
@@ -73,49 +78,51 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent); /* Subtler shine - لمعان أخف */
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent); /* لمعان أخف */
             transition: all 0.6s ease;
         }
         .btn-primary-ultra:hover::before {
             left: 100%;
         }
         .btn-primary-ultra:hover {
-            transform: translateY(-4px) scale(1.03); /* Subtler hover - تأثير تمرير أخف */
+            transform: translateY(-4px) scale(1.03); /* تأثير تمرير أخف */
             box-shadow: 0 12px 32px rgba(255, 75, 43, 0.4);
         }
+        /* أنماط زر الواتساب */
         .btn-whatsapp-ultra {
             background-color: #25D366;
             color: white;
             font-weight: 700;
-            /* Responsive padding handled by Tailwind */
             border-radius: 50px;
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.25); /* Slightly reduced shadow */
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.25); /* تقليل طفيف للظل */
             border: none;
-            display: inline-block; /* Ensure proper rendering */
+            display: inline-block; /* ضمان العرض الصحيح */
         }
         .btn-whatsapp-ultra:hover {
             background-color: #1DAE50;
-            transform: translateY(-3px) scale(1.02); /* Subtler hover */
+            transform: translateY(-3px) scale(1.02); /* تأثير تمرير أخف */
             box-shadow: 0 10px 28px rgba(29, 174, 80, 0.35);
         }
         
-        .price-display-ultra-base { /* Base class for structure, Tailwind for size - فئة أساسية للهيكل، Tailwind للحجم */
+        /* أنماط عرض السعر */
+        .price-display-ultra-base { 
             font-weight: 900;
             color: #fde047; 
-            text-shadow: 0 0 8px rgba(253, 224, 71, 0.4), 0 0 15px rgba(253, 224, 71, 0.25); /* Subtler shadow */
+            text-shadow: 0 0 8px rgba(253, 224, 71, 0.4), 0 0 15px rgba(253, 224, 71, 0.25); /* ظل أخف */
         }
-        .price-currency-ultra-base { /* Base class for structure, Tailwind for size */
+        .price-currency-ultra-base { 
             font-weight: 700;
             color: #facc15; 
         }
 
-        .section-title-ultra-base { /* Base class for structure, Tailwind for size */
+        /* أنماط عناوين الأقسام */
+        .section-title-ultra-base { 
             font-weight: 900;
             color: #cbd5e1; 
             position: relative;
-            padding-bottom: 1rem; /* Adjusted padding - تعديل الحشوة */
-            margin-bottom: 2.5rem; /* Adjusted margin - تعديل الهامش */
+            padding-bottom: 1rem; /* تعديل الحشوة */
+            margin-bottom: 2.5rem; /* تعديل الهامش */
         }
         .section-title-ultra-base::after {
             content: '';
@@ -123,17 +130,18 @@
             bottom: 0;
             right: 50%;
             transform: translateX(50%);
-            width: 100px; /* Adjusted width - تعديل العرض */
-            height: 5px; /* Adjusted height - تعديل الارتفاع */
+            width: 100px; /* تعديل العرض */
+            height: 5px; /* تعديل الارتفاع */
             background: linear-gradient(90deg, #ff4b2b, #ff416c, #fde047); 
             border-radius: 3px;
             animation: subtleShine 3s linear infinite;
         }
+        /* أنماط البطاقات (Cards) */
         .card-ultra {
             background-color: var(--card-bg-ultra); 
             border: 1px solid var(--card-border-ultra);
             border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Subtler shadow */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* ظل أخف */
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
             backdrop-filter: blur(10px); 
             -webkit-backdrop-filter: blur(10px);
@@ -141,23 +149,25 @@
             position: relative;
         }
         .card-ultra:hover {
-            transform: translateY(-10px) perspective(1000px) rotateX(1deg) rotateY(0.5deg); /* Subtler hover 3D - تأثير تمرير ثلاثي الأبعاد أخف */
+            transform: translateY(-10px) perspective(1000px) rotateX(1deg) rotateY(0.5deg); /* تأثير تمرير ثلاثي الأبعاد أخف */
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
             border-color: var(--card-hover-border-ultra);
         }
-        .feature-icon-ultra-base { /* Base class for structure, Tailwind for size */
-            padding: 1.5rem; /* Adjusted padding */
+        /* أنماط أيقونات الميزات */
+        .feature-icon-ultra-base { 
+            padding: 1.5rem; /* تعديل الحشوة */
             border-radius: 50%;
             background: linear-gradient(135deg, #ff4b2b, #ff416c);
             color: white;
-            margin-bottom: 1.5rem; /* Adjusted margin */
+            margin-bottom: 1.5rem; /* تعديل الهامش */
             display: inline-block;
-            box-shadow: 0 8px 20px rgba(255, 75, 43, 0.3); /* Subtler shadow */
+            box-shadow: 0 8px 20px rgba(255, 75, 43, 0.3); /* ظل أخف */
             transition: transform 0.3s ease;
         }
         .card-ultra:hover .feature-icon-ultra-base {
-            transform: scale(1.08) rotate(3deg); /* Subtler rotation - دوران أخف */
+            transform: scale(1.08) rotate(3deg); /* دوران أخف */
         }
+        /* أنماط اسم المتجر */
         .store-name-ultra {
             font-weight: 900;
             background: linear-gradient(45deg, #fde047, #ff416c, #667eea);
@@ -166,11 +176,12 @@
             background-clip: text;
             text-fill-color: transparent;
             background-size: 200% auto;
-            animation: gradientBG 5s linear infinite; /* Re-used gradientBG for name - إعادة استخدام تدرج الخلفية للاسم */
+            animation: gradientBG 5s linear infinite; /* إعادة استخدام تدرج الخلفية للاسم */
         }
+        /* أنماط حركة الظهور عند التمرير */
         .animate-slide-in-bottom {
             opacity: 0;
-            transform: translateY(40px); /* Subtler slide - انزلاق أخف */
+            transform: translateY(40px); /* انزلاق أخف */
             transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1), transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
             transition-delay: var(--animation-delay, 0s);
         }
@@ -178,6 +189,7 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* أنماط الجسيمات المتحركة في الخلفية */
         .particles {
             position: absolute;
             top: 0;
@@ -189,22 +201,24 @@
         }
         .particle {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.1); /* Subtler particles - جسيمات أخف */
+            background-color: rgba(255, 255, 255, 0.1); /* جسيمات أخف */
             border-radius: 50%;
-            animation: float 25s infinite ease-in-out; /* Slower float - طفو أبطأ */
+            animation: float 25s infinite ease-in-out; /* طفو أبطأ */
         }
+        /* أنماط الأشكال التجريدية في الخلفية */
         .hero-shape {
             position: absolute;
             border-radius: 50%;
             opacity: 0.07; 
             filter: blur(50px); 
-            animation: float 30s infinite ease-in-out alternate; /* Re-used float for shapes - إعادة استخدام الطفو للأشكال */
+            animation: float 30s infinite ease-in-out alternate; /* إعادة استخدام الطفو للأشكال */
             transform-origin: center center;
         }
         .shape1 { width: 300px; height: 300px; background-color: var(--primary-color-start); top: 15%; left: 10%; animation-duration: 35s; }
         .shape2 { width: 250px; height: 250px; background-color: var(--primary-color-end); top: 55%; right: 15%; animation-duration: 30s; animation-delay: -4s;}
         .shape3 { width: 200px; height: 200px; background-color: var(--accent-color-start); bottom: 10%; left: 25%; animation-duration: 38s; animation-delay: -8s;}
 
+        /* استجابة الأشكال التجريدية للشاشات الأصغر */
         @media (max-width: 768px) { 
             .hero-shape { transform: scale(0.7); }
             .shape1 { top: 10%; left: 5%; }
@@ -230,8 +244,7 @@
     </nav>
 
     <header class="hero-gradient-ultra text-white pt-24 pb-28 md:pt-32 md:pb-36 lg:pt-36 lg:pb-40 relative">
-        <div class="particles" id="particle-container">
-            </div>
+        <div class="particles" id="particle-container"></div>
         <div class="hero-shape shape1"></div>
         <div class="hero-shape shape2"></div>
         <div class="hero-shape shape3"></div>
@@ -263,7 +276,7 @@
     <section id="intro-canva-pro" class="py-20 md:py-24 bg-slate-950">
         <div class="container mx-auto px-4 sm:px-6 animate-slide-in-bottom">
             <h2 class="section-title-ultra-base text-3xl sm:text-4xl md:text-5xl text-center">ما هو Canva Pro؟ ولماذا تحتاجه؟</h2>
-            <div class="max-w-xs sm:max-w-md md:max-w-3xl mx-auto text-center card-ultra p-8 sm:p-10 md:p-12">
+            <div class="max-w-xs sm:max-w-md md:max-w-3xl mx-auto text-center card-ultra p-8 sm:p-10 md:p-12 animate-slide-in-bottom" style="--animation-delay: 0.2s;">
                 <p class="text-slate-300 leading-relaxed text-base sm:text-lg md:text-xl mb-5 sm:mb-6">
                     مع Canva Pro، ستتمكن من إنشاء محتوى مذهل بسرعة وسهولة، حتى لو لم تكن لديك أي خبرة سابقة في التصميم. <strong class="text-pink-400">"نعم، تصاميم احترافية بكل معنى الكلمة بين يديك!"</strong> 😎
                 </p>
@@ -278,7 +291,7 @@
         <div class="container mx-auto px-4 sm:px-6 animate-slide-in-bottom">
             <h2 class="section-title-ultra-base text-3xl sm:text-4xl md:text-5xl text-center !text-yellow-300 after:!bg-gradient-to-r after:from-yellow-400 after:to-orange-500">العرض الذي لن يتكرر!</h2>
             <p class="text-center text-slate-400 mb-12 sm:mb-16 max-w-sm sm:max-w-xl mx-auto text-base sm:text-lg">فرصتك الذهبية للحصول على Canva Pro بأقل سعر على الإطلاق، مقدمة من <span class="font-bold store-name-ultra text-lg sm:text-xl">تخفيضات صابر الرقميه</span>:</p>
-            <div class="max-w-xs sm:max-w-md md:max-w-2xl mx-auto card-ultra text-slate-200 p-6 sm:p-8 md:p-12">
+            <div class="max-w-xs sm:max-w-md md:max-w-2xl mx-auto card-ultra text-slate-200 p-6 sm:p-8 md:p-12 animate-slide-in-bottom" style="--animation-delay: 0.4s;">
                 <div class="text-center mb-8 sm:mb-10">
                     <img src="https://placehold.co/100x100/FF4B2B/FFFFFF?text=Canva+Pro" alt="أيقونة كانفا برو" class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 mx-auto mb-5 sm:mb-6 rounded-full border-4 border-pink-500 shadow-2xl animate-pulseGlow" style="animation-duration: 4s;">
                     <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400">Canva Pro - اشتراك سنوي رسمي</h3>
@@ -315,17 +328,17 @@
             <h2 class="section-title-ultra-base text-3xl sm:text-4xl md:text-5xl text-center">خطوات بسيطة للاشتراك الفوري:</h2>
             <p class="text-center text-slate-400 mb-12 sm:mb-16 max-w-sm sm:max-w-xl mx-auto text-base sm:text-lg">دقائق معدودة تفصلك عن عالم الإبداع اللامحدود مع Canva Pro:</p>
             <div class="grid md:grid-cols-3 gap-8 sm:gap-10 text-center">
-                <div class="card-ultra p-6 sm:p-8 md:p-10" style="--animation-delay: 0.2s;">
+                <div class="card-ultra p-6 sm:p-8 md:p-10 animate-slide-in-bottom" style="--animation-delay: 0.2s;">
                     <div class="feature-icon-ultra-base text-2xl sm:text-3xl mb-4 sm:mb-5"><i class="fab fa-whatsapp"></i></div>
                     <h3 class="text-xl sm:text-2xl font-bold text-slate-100 mb-2 sm:mb-3">1. تواصل معنا</h3>
                     <p class="text-sm sm:text-md text-slate-400 leading-relaxed">اضغط على زر "تواصل واتساب" الموجود في قسم العرض أعلاه لبدء محادثة معنا.</p>
                 </div>
-                <div class="card-ultra p-6 sm:p-8 md:p-10" style="--animation-delay: 0.4s;">
+                <div class="card-ultra p-6 sm:p-8 md:p-10 animate-slide-in-bottom" style="--animation-delay: 0.4s;">
                     <div class="feature-icon-ultra-base text-2xl sm:text-3xl mb-4 sm:mb-5"><i class="fas fa-money-check-alt"></i></div>
                     <h3 class="text-xl sm:text-2xl font-bold text-slate-100 mb-2 sm:mb-3">2. أكمل الدفع</h3>
                     <p class="text-sm sm:text-md text-slate-400 leading-relaxed">اختر طريقة الدفع التي تناسبك (نقطة حاسب كريمي أو استفسر عن الطرق الأخرى عبر واتساب).</p>
                 </div>
-                <div class="card-ultra p-6 sm:p-8 md:p-10" style="--animation-delay: 0.6s;">
+                <div class="card-ultra p-6 sm:p-8 md:p-10 animate-slide-in-bottom" style="--animation-delay: 0.6s;">
                     <div class="feature-icon-ultra-base text-2xl sm:text-3xl mb-4 sm:mb-5"><i class="fas fa-paper-plane"></i></div>
                     <h3 class="text-xl sm:text-2xl font-bold text-slate-100 mb-2 sm:mb-3">3. استلم تفعيلك فوراً</h3>
                     <p class="text-sm sm:text-md text-slate-400 leading-relaxed">بعد تأكيد الدفع، سنقوم بتفعيل اشتراك Canva Pro الخاص بك على الفور بالطريقة التي تفضلها.</p>
@@ -351,15 +364,25 @@
             <h2 class="section-title-ultra-base text-3xl sm:text-4xl md:text-5xl text-center">ماذا يقول عملاؤنا عن عروضنا؟</h2>
              <p class="text-center text-slate-400 mb-12 sm:mb-16 max-w-sm sm:max-w-xl mx-auto text-base sm:text-lg">رضاكم هو غايتنا، وهذه بعض انطباعات عملائنا الكرام الذين وثقوا بنا:</p>
             <div class="grid md:grid-cols-2 gap-10 sm:gap-12">
-                <div class="card-ultra p-6 sm:p-8 md:p-10 border-t-8 border-purple-500">
-                    <img src="https://placehold.co/80x80/8B5CF6/FFFFFF?text=نجم" alt="صورة العميل نجم" class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-5 sm:mb-6 border-4 border-slate-700 shadow-xl object-cover">
+                <div class="card-ultra p-6 sm:p-8 md:p-10 border-t-8 border-purple-500 animate-slide-in-bottom" style="--animation-delay: 0.2s;">
+                    <img src="https://placehold.co/80x80/8B5CF6/FFFFFF?text=نجم" alt="صورة العميل نجم" class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-5 sm:mb-6 border-4 border-slate-700 shadow-xl object-cover rounded-full">
                     <p class="text-slate-300 italic mb-5 sm:mb-6 text-center text-base sm:text-lg leading-relaxed">"بصراحة، أفضل سعر لكنفا برو وجدته على الإطلاق! التفعيل كان فوري والخدمة أكثر من ممتازة. شكراً جزيلاً <span class="font-semibold store-name-ultra">تخفيضات صابر الرقميه</span>، أنتم الأفضل."</p>
                     <p class="font-bold text-purple-400 text-center text-sm sm:text-md">- نجم الدين العوامي</p>
                 </div>
-                <div class="card-ultra p-6 sm:p-8 md:p-10 border-t-8 border-pink-500">
-                    <img src="https://placehold.co/80x80/EC4899/FFFFFF?text=أمل" alt="صورة العميلة أمل" class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-5 sm:mb-6 border-4 border-slate-700 shadow-xl object-cover">
+                <div class="card-ultra p-6 sm:p-8 md:p-10 border-t-8 border-pink-500 animate-slide-in-bottom" style="--animation-delay: 0.4s;">
+                    <img src="https://placehold.co/80x80/EC4899/FFFFFF?text=أمل" alt="صورة العميلة أمل" class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-5 sm:mb-6 border-4 border-slate-700 shadow-xl object-cover rounded-full">
                     <p class="text-slate-300 italic mb-5 sm:mb-6 text-center text-base sm:text-lg leading-relaxed">"كنت مترددة في البداية بسبب السعر المنخفض، لكن التجربة فاقت توقعاتي! فريق <span class="font-semibold store-name-ultra">تخفيضات صابر الرقميه</span> محترف جداً ومتعاون. أنصح الجميع بهذا العرض."</p>
                     <p class="font-bold text-pink-400 text-center text-sm sm:text-md">- أمل السعيدي</p>
+                </div>
+                <div class="card-ultra p-6 sm:p-8 md:p-10 border-t-8 border-green-500 animate-slide-in-bottom" style="--animation-delay: 0.6s;">
+                    <img src="https://placehold.co/80x80/10B981/FFFFFF?text=محمد" alt="صورة العميل محمد" class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-5 sm:mb-6 border-4 border-slate-700 shadow-xl object-cover rounded-full">
+                    <p class="text-slate-300 italic mb-5 sm:mb-6 text-center text-base sm:text-lg leading-relaxed">"خدمة سريعة جداً واشتراك كانفا برو شغال 100%. وفرت عليّ مبلغ كبير جداً. تجربة شراء ممتازة، سأعود للشراء منهم بالتأكيد!"</p>
+                    <p class="font-bold text-green-400 text-center text-sm sm:text-md">- محمد اليزيدي</p>
+                </div>
+                <div class="card-ultra p-6 sm:p-8 md:p-10 border-t-8 border-blue-500 animate-slide-in-bottom" style="--animation-delay: 0.8s;">
+                    <img src="https://placehold.co/80x80/3B82F6/FFFFFF?text=فاطمة" alt="صورة العميلة فاطمة" class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-5 sm:mb-6 border-4 border-slate-700 shadow-xl object-cover rounded-full">
+                    <p class="text-slate-300 italic mb-5 sm:mb-6 text-center text-base sm:text-lg leading-relaxed">"أنا مصممة جرافيك وهذا العرض أنقذني! الوصول لكل مميزات كانفا برو بهذا السعر جنوني. شكراً لفريق الدعم على سرعة التفعيل والمساعدة."</p>
+                    <p class="font-bold text-blue-400 text-center text-sm sm:text-md">- فاطمة الزهراء</p>
                 </div>
             </div>
         </div>
@@ -383,21 +406,24 @@
     </footer>
 
     <script>
-        // Ensure this script runs after the DOM is fully loaded
+        // التأكد من تشغيل السكريبت بعد تحميل DOM بالكامل
         document.addEventListener('DOMContentLoaded', function() {
+            // تحديث السنة الحالية في التذييل
             const currentYearElement = document.getElementById('currentYear');
             if (currentYearElement) {
                 currentYearElement.textContent = new Date().getFullYear();
             }
 
-            // Particle generation for hero section
+            // توليد الجسيمات المتحركة في قسم البطل
             const particleContainer = document.getElementById('particle-container');
             if (particleContainer) { 
+                // عدد الجسيمات يعتمد على عرض الشاشة لتحسين الأداء على الجوال
                 const numParticles = window.innerWidth < 768 ? 15 : 30; 
 
                 for (let i = 0; i < numParticles; i++) {
                     let particle = document.createElement('div');
                     particle.classList.add('particle');
+                    // حجم الجسيمات يعتمد على عرض الشاشة
                     let size = Math.random() * (window.innerWidth < 768 ? 4 : 6) + 2; 
                     particle.style.width = `${size}px`;
                     particle.style.height = `${size}px`;
@@ -409,38 +435,40 @@
                 }
             }
 
-            // Intersection Observer for entrance animations
+            // Intersection Observer لتفعيل حركات الظهور عند التمرير
             const animatedElements = document.querySelectorAll('.animate-slide-in-bottom');
             if (typeof IntersectionObserver !== 'undefined') {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target); 
+                            observer.unobserve(entry.target); // إزالة المراقبة بعد الظهور لمرة واحدة
                         }
                     });
-                }, { threshold: 0.05 });
+                }, { threshold: 0.05 }); // تفعيل الحركة عندما يكون 5% من العنصر مرئياً
 
                 animatedElements.forEach(el => {
                     observer.observe(el);
                 });
             } else {
+                // في حال عدم دعم Intersection Observer، يتم إظهار العناصر مباشرة
                 animatedElements.forEach(el => {
                     el.classList.add('is-visible');
                 });
             }
 
-            // Abstract hero shapes movement
+            // حركة الأشكال التجريدية في قسم البطل عند التمرير
             const heroShapes = document.querySelectorAll('.hero-shape');
             if (heroShapes.length > 0) {
                 window.addEventListener('scroll', () => {
                     const scrollY = window.scrollY;
                     heroShapes.forEach((shape, index) => {
                         const speed = (index + 1) * 0.03; 
+                        // تفعيل الحركة فقط على الشاشات الأكبر من 640 بكسل لتحسين الأداء على الجوال
                         if (window.innerWidth > 640) { 
                            shape.style.transform = `translateY(${scrollY * speed * 0.15}px) rotate(${scrollY * speed * 0.02}deg) scale(${1 - scrollY * 0.00005})`;
                         } 
-                        /* On mobile, CSS media queries handle scaling, and JS transform on scroll is disabled for performance. */
+                        /* على الجوال، يتم التعامل مع التحجيم بواسطة استعلامات وسائط CSS، ويتم تعطيل تحويل JS عند التمرير لتحسين الأداء. */
                     });
                 });
             }
